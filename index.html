@@ -1,0 +1,157 @@
+<html>
+<style>
+
+body {
+    background: rgb(52,133,132);
+    background: linear-gradient(90deg, rgba(52,133,132,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+
+
+pre {
+    font-family: 'Courier New', Courier, monospace;
+    color:#00c5fc
+}
+
+</style>
+
+<body>
+
+<pre id='art'>
+
+</pre>
+
+<script>
+
+window.onload = function () {
+
+    console.log('Que mira bobo? Anda pa lla')
+
+    var my_str=''
+
+    my_str+="            .      .      .      .      .      .      .      .      .      .      .                              \n"
+    my_str+="        .                               .       .       .       .       .       .                                \n"
+    my_str+="           .        .        .        .        .        .        .        .        .                             \n"
+    my_str+="             .         .         .        _......____._        .         .                                       \n"
+    my_str+="           .          .          . ..--''' .           ''''''---...          .                                   \n"
+    my_str+="                           _...--''        ................       `-.              .                             \n"
+    my_str+="                        .-'        ...:'::::;:::%:.::::::_;;:...     `-.                                         \n"
+    my_str+="                     .-'       ..::::'''''   _...---''''':::+;_::.      `.      .                                \n"
+    my_str+="          .        .' .    ..::::'      _.-''               :::)::.       `.                                     \n"
+    my_str+="                 .      ..;:::'     _.-'         .             f::'::    o  _                                    \n"
+    my_str+="                /     .:::%'  .  .-'                        .-.  ::;;:.   /' 'x                                  \n"
+    my_str+="          .   .'  ''::.::'    .-'     _.--''''-.           (   )  ::.::  |_.-' |                                 \n"
+    my_str+="             .'    ::;:'    .'     .-' .d@@b.   \    .    . `-'   ::%::   \_ _/    .                             \n"
+    my_str+="            .'    :,::'    /   . _'    8@@@@8   j      .-'       :::::      ' o                                  \n"
+    my_str+='        ============================================================================================================             \n'
+    my_str+='        $$$$$$$\\                                                $$$$$$$\\                                                       \n'
+    my_str+='        $$  __$$\\                                               $$  __$$\\                                                      \n'
+    my_str+='        $$ |  $$ | $$$$$$\\  $$\\   $$\\ $$$$$$$\\   $$$$$$\\        $$ |  $$ | $$$$$$\\  $$$$$$\\$$$$\\   $$$$$$\\                     \n'
+    my_str+='        $$$$$$$\\ |$$  __$$\\ $$ |  $$ |$$  __$$\\ $$  __$$\\       $$$$$$$  |$$  __$$\\ $$  _$$  _$$\\  \\____$$\\                    \n'
+    my_str+='        $$  __$$\\ $$ |  \\__|$$ |  $$ |$$ |  $$ |$$ /  $$ |      $$  __$$  $$ /  $$ |$$ / $$ / $$ | $$$$$$$ |                   \n'
+    my_str+='        $$ |  $$ |$$ |      $$ |  $$ |$$ |  $$ |$$ |  $$ |      $$ |  $$ |$$ |  $$ |$$ | $$ | $$ |$$  __$$ |                   \n'
+    my_str+='        $$$$$$$  |$$ |      \\$$$$$$  |$$ |  $$ |\\$$$$$$  |      $$ |  $$ |\\$$$$$$  |$$ | $$ | $$ |\\$$$$$$$ |                   \n'
+    my_str+='        \\_______/ \\__|       \\______/ \\__|  \\__| \\______/       \\__|  \\__| \\______/ \\__| \\__| \\__| \\_______|                   \n'
+    my_str+='        ============================================================================================================             \n'
+    my_str+="            | .  :.%:' .  j     (_)    `@@@P'  .'   .-'         ::.::    .  f                                    \n"
+    my_str+="            |    ::::     (        -..____...-'  .-'          .::::'       /                                     \n"
+    my_str+="        .   |    `:`::    `.                ..--'        .  .::'::   .    /                                      \n"
+    my_str+="            j     `:::::    `-._____...---''             .::%:::'       .'  .                                    \n"
+    my_str+="             \      ::.:%..             .       .    ...:,::::'       .'                                         \n"
+    my_str+="         .    \       `:::`:..                ....::::.::::'       .-'          .                                \n"
+    my_str+="               \    .   ``:::%::`::.......:::::%::.::::''       .-'                                              \n"
+    my_str+="              . `.        . ``::::::%::::.::;;:::::'''      _.-'          .                                      \n"
+    my_str+="          .       `-..     .    .   ````'''''         . _.-'     .          .                                    \n"
+    my_str+="                 .    ''--...____    .   ______......--' .         .         .                                   \n"
+    my_str+="          .        .        .    ''''''''     .        .        .        .        .                              \n"
+    my_str+="         .       .       .       .       .       .       .       .       .                                       \n"
+    my_str+="             .      .      .      .      .      .      .      .      .      .      .                             \n"
+
+    document.getElementById('art').innerHTML=my_str
+
+    console.log("Hello!")
+
+    var curChar = '$'
+    
+    function changeLogo() {   
+
+        var charList = ['B','R','U','N','O','R','O','M','A']
+        var colors = ['03045E','023E8A','0077B6','0096C7','0096C7','00B4D8','48CAE4','90E0EF','ADE8F4','CAF0F8']
+
+        var bgImg =  document.getElementById('art').innerHTML;
+        var randInt = Math.floor(Math.random() * charList.length )
+        var randColor = Math.floor(Math.random() * colors.length )
+        
+        bgImg = bgImg.replaceAll(curChar, charList[randInt]);
+
+        curChar = charList[randInt]
+
+        bgImg_lines = bgImg.split('\n')
+
+        //movimiento random 
+        var rand_h= false
+        var rand_v = true
+
+
+        //movimiento horizontal
+        if (rand_h && Math.floor(Math.random() * 2) == 0){
+                    //mueve de izq a derecha
+                    for (var i = 0; i < bgImg_lines.length ; i ++) {
+
+                        var tmp_line = bgImg_lines[i].slice(1) + bgImg_lines[i].slice(0,1)
+                        //console.log("Linea : "+i+" "+tmp_line.length)
+                        bgImg_lines[i]=tmp_line
+
+                    }                    
+        }
+        else {
+
+                    //mueve derecha a izq
+                    for (var i = 0; i < bgImg_lines.length ; i ++) {
+
+                        var tmp_line = bgImg_lines[i].slice(- 1) + bgImg_lines[i].slice(0,-1)
+                        //console.log("Linea : "+i+" "+tmp_line.length)
+                        bgImg_lines[i]=tmp_line
+
+                    }
+                    
+        }
+
+        //movimiento vertical
+        if (rand_v && Math.floor(Math.random() * 2) == 0){
+            //mueve arriba a abajo
+            ver_lines =[bgImg_lines[bgImg_lines.length-1]].concat(bgImg_lines.slice(0,-1))
+        }
+        else {
+            //mueve abajo a arriba
+            ver_lines = bgImg_lines.slice(1).concat(bgImg_lines[0])  
+        }
+
+
+        document.getElementById('art').innerHTML = ver_lines.join('\n') ;
+        document.getElementById("art").style.color = colors[randColor]
+
+        
+    }
+
+
+
+
+
+    setInterval(changeLogo, 100);
+
+
+
+
+}
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
